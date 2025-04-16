@@ -1,13 +1,29 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.devops.tomcat</groupId>
-  <artifactId>html-tomcat-k8s</artifactId>
-  <version>1.0.0</version>
-  <packaging>pom</packaging>
-
-  <name>Tomcat HTML Page</name>
-</project>
+<build>
+    <plugins>
+        <plugin>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>3.2.0</version>
+            <executions>
+                <execution>
+                    <id>copy-html</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>copy-resources</goal>
+                    </goals>
+                    <configuration>
+                        <outputDirectory>${project.build.directory}/web</outputDirectory>
+                        <resources>
+                            <resource>
+                                <directory>${basedir}</directory>
+                                <includes>
+                                    <include>index.html</include>
+                                </includes>
+                            </resource>
+                        </resources>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
 
