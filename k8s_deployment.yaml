@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: deployment-app
-        image: mugeshraj/deployment_app:latest  # replace with your image
+        image: mugeshraj/deployment_app:latest  # <-- update if needed
         ports:
         - containerPort: 8080
 ---
@@ -32,4 +32,5 @@ spec:
       port: 80
       targetPort: 8080
   type: NodePort
+
 
