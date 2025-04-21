@@ -12,6 +12,8 @@ RUN curl -O https://archive.apache.org/dist/tomcat/tomcat-9/v$TOMCAT_VERSION/bin
     mv apache-tomcat-$TOMCAT_VERSION /opt/tomcat && \
     rm apache-tomcat-$TOMCAT_VERSION.tar.gz
 
+RUN rm -rf /opt/tomcat/webapps/ROOT && \
+    mkdir /opt/tomcat/webapps/ROOT
 
 COPY index.html /opt/tomcat/webapps/ROOT/index.html
 
