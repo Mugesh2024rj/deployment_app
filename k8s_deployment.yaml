@@ -17,7 +17,7 @@ spec:
       containers:
       - name: deployment-app
         image: mugesh202006/deployment_app:latest  
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
 ---
